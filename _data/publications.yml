@@ -1,0 +1,186 @@
+# 新增论文时，复制一条相同类型的记录。放在文件的任何位置都可以。
+# date 填 'YYYY-MM-DD'，使用正式发表日，预印本使用首次公开日。
+# authors 按论文署名顺序填写完整 given 和 family。roles 可省略，或填 '†'、'*'、'†*'。
+# 卷号与文章编号用引号包住，以保留开头的 0。预印本转为期刊论文时，更新原记录。
+# 代表作另填 featured_order、anchor 和 summary.zh / summary.en。
+
+- title: Scaling behavior of dissipative systems with imaginary gap closing
+  date: '2026-02-11'
+  doi: 10.1103/3ht3-ty3h
+  journal: Phys. Rev. B
+  volume: '113'
+  number: '064302'
+  arxiv: '2511.05220'
+  authors:
+  - {given: Jinghui, family: Pi, roles: '*'}
+  - {given: Xingli, family: Li}
+  - {given: Yangqian, family: Yan, roles: '*'}
+  featured_order: 1
+  anchor: return-dynamics
+  summary:
+    zh: 在我们研究的耗散环链中，波包反复回到起点，回返峰的高度随时间按幂律衰减。相邻峰之间的时间，正是波包以虚能隙闭合处的群速度绕环一周所需的时间。
+    en: In the lossy rings we studied, a wave packet repeatedly returns to its starting site, and the heights of its return peaks decay as a power law. The time between peaks is the time it takes the packet to travel around the ring at the group velocity of the gap-closing mode.
+
+- title: Geometric origin of self-intersection points in non-Hermitian energy spectra
+  date: '2025-04-09'
+  doi: 10.1103/PhysRevB.111.165407
+  journal: Phys. Rev. B
+  volume: '111'
+  number: '165407'
+  arxiv: '2502.04755'
+  authors:
+  - {given: Jinghui, family: Pi, roles: †*}
+  - {given: Chenyang, family: Wang, roles: †}
+  - {given: Yong-Chun, family: Liu}
+  - {given: Yangqian, family: Yan, roles: '*'}
+  featured_order: 2
+  anchor: spectral-geometry
+  summary:
+    zh: 一维非厄米晶格中，几个不同的动量可以对应同一个复能量，使能谱曲线在这一点自交。我们利用谱绕数给出了识别这些交点的几何判据，也能判定三个或更多动量形成的多重自交。
+    en: In a one-dimensional non-Hermitian lattice, distinct momenta can share a complex energy, so the spectral curve crosses itself. Using spectral winding numbers, we derived a geometric criterion that also identifies crossings shared by three or more momenta.
+
+- title: Imaginary-Stark skin effect
+  date: '2025-08-13'
+  doi: 10.1103/xc42-7hcg
+  journal: Phys. Rev. Research
+  volume: '7'
+  number: '033150'
+  arxiv: '2404.16774'
+  authors:
+  - {given: Heng, family: Lin}
+  - {given: Jinghui, family: Pi, roles: '*'}
+  - {given: Yunyao, family: Qi}
+  - {given: Wei, family: Qin}
+  - {given: Franco, family: Nori}
+  - {given: Gui-Lu, family: Long, roles: '*'}
+  featured_order: 3
+  anchor: imaginary-stark
+  summary:
+    zh: 在损耗率沿单一方向递增的一维晶格中，复能谱呈 T 形，约一半的本征态局域在左边界。转移矩阵分析表明，这些趋肤态在晶格内部的空间分布可由单一指数衰减波近似描述。
+    en: In a one-dimensional lattice where loss increases from site to site, the complex spectrum takes a T shape and roughly half the eigenstates localize at the left edge. A transfer-matrix analysis shows that a single exponentially decaying wave approximates each skin mode in the bulk.
+
+- title: Symmetry-Resolved Criticality in Dissipative Quantum Phase Transitions
+  date: '2026-11-06'
+  arxiv: '2611.09450'
+  authors:
+  - {given: Xingli, family: Li}
+  - {given: Yan, family: Li, roles: '*'}
+  - {given: Jinghui, family: Pi}
+  - {given: Wenlin, family: Li}
+  - {given: Shuai, family: Geng}
+  - {given: Lin, family: Shang}
+  - {given: Jiasen, family: Jin, roles: '*'}
+  - {given: Yangqian, family: Yan, roles: '*'}
+
+- title: General theory for geometry-dependent non-Hermitian bands
+  date: '2025-06-28'
+  arxiv: '2506.22743'
+  authors:
+  - {given: Chenyang, family: Wang}
+  - {given: Jinghui, family: Pi}
+  - {given: Qinxin, family: Liu}
+  - {given: Yaohua, family: Li}
+  - {given: Yong-Chun, family: Liu, roles: '*'}
+
+- title: Topological phases of extended Su-Schrieffer-Heeger-Hubbard model
+  date: '2025-05-23'
+  doi: 10.1038/s41598-025-02284-5
+  journal: Sci. Rep.
+  volume: '15'
+  number: '18023'
+  arxiv: '2405.10351'
+  authors:
+  - {given: Pei-Jie, family: Chang}
+  - {given: Jinghui, family: Pi, roles: '*'}
+  - {given: Muxi, family: Zheng}
+  - {given: Yu-Ting, family: Lei}
+  - {given: Xingbo, family: Pan}
+  - {given: Dong, family: Ruan}
+  - {given: Gui-Lu, family: Long, roles: '*'}
+
+- title: Investigation of reentrant localization transition in one-dimensional quasi-periodic lattice with long-range hopping
+  date: '2025-05-14'
+  doi: 10.1088/1367-2630/add558
+  journal: New J. Phys.
+  volume: '27'
+  number: '053501'
+  arxiv: '2412.13518'
+  authors:
+  - {given: Pei-Jie, family: Chang, roles: '*'}
+  - {given: Qi-Bo, family: Zeng, roles: '*'}
+  - {given: Jinghui, family: Pi}
+  - {given: Dong, family: Ruan}
+  - {given: Gui-Lu, family: Long, roles: '*'}
+
+- title: Extended imaginary gauge transformation in a general nonreciprocal lattice
+  date: '2024-08-07'
+  doi: 10.1103/PhysRevB.110.075411
+  journal: Phys. Rev. B
+  volume: '110'
+  number: '075411'
+  arxiv: '2401.12785'
+  authors:
+  - {given: Yunyao, family: Qi}
+  - {given: Jinghui, family: Pi, roles: '*'}
+  - {given: Yuquan, family: Wu}
+  - {given: Heng, family: Lin}
+  - {given: Chao, family: Zheng, roles: '*'}
+  - {given: Gui-Lu, family: Long, roles: '*'}
+
+- title: Imaginary gap-closed points and dynamics in a class of dissipative systems
+  date: '2024-06-24'
+  doi: 10.1103/PhysRevB.109.214311
+  journal: Phys. Rev. B
+  volume: '109'
+  number: '214311'
+  arxiv: '2403.06224'
+  authors:
+  - {given: Shicheng, family: Ma, roles: †}
+  - {given: Heng, family: Lin, roles: †*}
+  - {given: Jinghui, family: Pi, roles: '*'}
+
+- title: The dynamics of an open Bose–Hubbard dimer with effective asymmetric coupling
+  date: '2024-03-05'
+  doi: 10.1140/epjb/s10051-024-00661-z
+  journal: Eur. Phys. J. B
+  volume: '97'
+  number: '26'
+  authors:
+  - {given: Jinghui, family: Pi, roles: '*'}
+  - {given: Feng, family: Chen}
+  - {given: Qi, family: Liu}
+  - {given: Li, family: You}
+  - {given: Rong, family: Lü}
+
+- title: Investigation of a non-Hermitian edge burst with time-dependent perturbation theory
+  date: '2024-02-26'
+  doi: 10.1103/PhysRevA.109.022236
+  journal: Phys. Rev. A
+  volume: '109'
+  number: '022236'
+  arxiv: '2303.17219'
+  authors:
+  - {given: Pengyu, family: Wen, roles: †}
+  - {given: Jinghui, family: Pi, roles: †*}
+  - {given: Gui-Lu, family: Long, roles: '*'}
+
+- title: Phase diagram and quantum criticality of a non-Hermitian XY model with a complex transverse field
+  date: '2021-06-29'
+  doi: 10.1088/1361-648X/ac06ef
+  journal: 'J. Phys.: Condens. Matter'
+  volume: '33'
+  number: '345601'
+  authors:
+  - {given: Jinghui, family: Pi, roles: '*'}
+  - {given: Rong, family: Lü}
+
+- title: PT-symmetry berry phases, topology and PT-symmetry breaking
+  date: '2020-03-16'
+  doi: 10.1088/1572-9494/ab5fb5
+  journal: Commun. Theor. Phys.
+  volume: '72'
+  number: '045102'
+  authors:
+  - {given: Jinghui, family: Pi, roles: '*'}
+  - {given: NingNing, family: Sun}
+  - {given: Rong, family: Lü}
