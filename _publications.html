@@ -1,0 +1,33 @@
+{% assign featured = site.data.publications | where_exp: "item", "item.featured_order" | sort: "featured_order" %}
+{% assign archive = site.data.publications | where_exp: "item", "item.featured_order == nil" | sort: "date" | reverse %}
+{% assign years = archive | group_by_exp: "item", "item.date | slice: 0, 4" %}
+{% assign journals = archive | where_exp: "item", "item.journal" | size %}
+{% assign preprints = archive.size | minus: journals %}
+<section id="featured" class="archive featured" aria-labelledby="featured-heading">
+  <h2 id="featured-heading">{% if page.lang == 'zh' %}代表作{% else %}Selected publications{% endif %}</h2>
+  <p class="author-legend">{% if page.lang == 'zh' %}† 共同第一作者 · * 通讯作者{% else %}† Co-first author · * Corresponding author{% endif %}</p>
+  <ol class="entries featured-list">
+    {% for paper in featured %}
+      {% include_relative _paper.html %}
+    {% endfor %}
+  </ol>
+</section>
+
+<section id="publications" class="publications archive" aria-labelledby="pub-heading">
+  <header class="archive-header">
+    <div>
+      <h2 id="pub-heading">{% if page.lang == 'zh' %}其他论文{% else %}Other publications{% endif %}</h2>
+      <p>{% if page.lang == 'zh' %}{{ journals }} 篇期刊论文 · {{ preprints }} 篇预印本{% else %}{{ journals }} journal article{% unless journals == 1 %}s{% endunless %} · {{ preprints }} preprint{% unless preprints == 1 %}s{% endunless %}{% endif %}</p>
+    </div>
+  </header>
+  {% for year in years %}
+    <section class="year-group" aria-labelledby="pub-{{ year.name }}">
+      <h3 id="pub-{{ year.name }}">{{ year.name }}</h3>
+      <ol class="entries">
+        {% for paper in year.items %}
+          {% include_relative _paper.html %}
+        {% endfor %}
+      </ol>
+    </section>
+  {% endfor %}
+</section>

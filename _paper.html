@@ -1,0 +1,56 @@
+{% if paper.doi %}
+  {% assign url = paper.doi | prepend: "https://doi.org/" %}
+{% else %}
+  {% assign url = paper.arxiv | prepend: "https://arxiv.org/abs/" %}
+{% endif %}
+{% assign heading = 'h4' %}
+{% if paper.featured_order %}{% assign heading = 'h3' %}{% endif %}
+<li{% if paper.anchor %} id="{{ paper.anchor | escape }}"{% endif %}>
+  <{{ heading }} lang="en"><a href="{{ url | escape }}">{{ paper.title | escape }}</a></{{ heading }}>
+  <p class="byline" lang="en">
+    {%- for author in paper.authors -%}
+      {%- capture name -%}
+        {%- assign given_names = author.given | split: ' ' -%}
+        {%- for given in given_names -%}
+          {%- unless forloop.first %}{{ ' ' }}{% endunless -%}
+          {%- assign parts = given | split: '-' -%}
+          {%- for part in parts -%}
+            {%- unless forloop.first %}-{% endunless -%}
+            {{- part | slice: 0 | upcase -}}.
+          {%- endfor -%}
+        {%- endfor %} {{ author.family }}
+      {%- endcapture -%}
+      <span class="author-credit">
+        {%- if author.given == 'Jinghui' and author.family == 'Pi' -%}
+          <strong>{{ name | escape }}</strong>
+        {%- else -%}
+          {{ name | escape }}
+        {%- endif -%}
+        {%- if author.roles -%}
+          {%- capture role_label -%}
+            {%- if author.roles contains '†' -%}
+              {%- if page.lang == 'zh' %}共同第一作者{% else %}Co-first author{% endif -%}
+              {%- if author.roles contains '*' -%}
+                {%- if page.lang == 'zh' %}、{% else %}, {% endif -%}
+              {%- endif -%}
+            {%- endif -%}
+            {%- if author.roles contains '*' -%}
+              {%- if page.lang == 'zh' %}通讯作者{% else %}Corresponding author{% endif -%}
+            {%- endif -%}
+          {%- endcapture -%}
+          <sup><abbr lang="{{ page.lang }}" title="{{ role_label }}">{{ author.roles | escape }}</abbr></sup>
+        {%- endif -%}
+      </span>{% unless forloop.last %}, {% endunless -%}
+    {%- endfor -%}
+  </p>
+  <p class="record">
+    {%- if paper.journal -%}
+      <cite lang="en">{{ paper.journal | escape }}</cite>{% if paper.volume %} <strong>{{ paper.volume | escape }}</strong>{% endif %}{% if paper.number %}, {{ paper.number | escape }}{% endif %}
+    {%- else -%}
+      <span class="preprint">{% if page.lang == 'zh' %}预印本{% else %}Preprint{% endif %}</span> · arXiv:{{ paper.arxiv | escape }}
+    {%- endif -%}
+    {%- if paper.featured_order %} (<time datetime="{{ paper.date | slice: 0, 4 }}">{{ paper.date | slice: 0, 4 }}</time>){% endif -%}
+    {%- if paper.journal and paper.arxiv %} <a class="arxiv" href="https://arxiv.org/abs/{{ paper.arxiv | escape }}">arXiv</a>{% endif -%}
+  </p>
+  {% if paper.featured_order %}<p class="featured-summary">{{ paper.summary[page.lang] | escape }}</p>{% endif %}
+</li>
