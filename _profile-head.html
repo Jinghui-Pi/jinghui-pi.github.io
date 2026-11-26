@@ -1,0 +1,37 @@
+{%- assign home = 'https://jinghui-pi.github.io/' -%}
+{%- assign english = home | append: 'en.html' -%}
+{%- if page.lang == 'en' -%}
+  {%- assign canonical = english -%}
+  {%- assign language = 'en' -%}
+{%- else -%}
+  {%- assign canonical = home -%}
+  {%- assign language = 'zh-CN' -%}
+{%- endif -%}
+<title>{{ page.title | escape }}</title>
+<meta name="description" content="{{ page.description | escape }}">
+<link rel="canonical" href="{{ canonical }}">
+<link rel="alternate" hreflang="zh-CN" href="{{ home }}">
+<link rel="alternate" hreflang="en" href="{{ english }}">
+<link rel="alternate" hreflang="x-default" href="{{ home }}">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "ProfilePage",
+  "@id": "{{ canonical }}#webpage",
+  "url": "{{ canonical }}",
+  "name": {{ page.title | jsonify }},
+  "inLanguage": "{{ language }}",
+  "mainEntity": {
+    "@type": "Person",
+    "@id": "{{ home }}#person",
+    "name": "Jinghui Pi",
+    "alternateName": "皮竞辉",
+    "givenName": "Jinghui",
+    "familyName": "Pi",
+    "jobTitle": "Assistant Professor",
+    "worksFor": { "@type": "CollegeOrUniversity", "name": "Guangxi University" },
+    "url": "{{ home }}",
+    "sameAs": ["https://orcid.org/0000-0002-6899-8132"]
+  }
+}
+</script>
